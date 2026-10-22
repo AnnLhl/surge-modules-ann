@@ -1,0 +1,93 @@
+{
+  "_说明": "构建策略。drop_hosts：去掉指向这些主机的全部重写、脚本和解密主机名；drop_scripts：按脚本地址片段去掉脚本；protect_*：任何上游条目都不得拦截或解密这些主机。",
+
+  "drop_hosts": {
+    "由单独安装的 BiliBili: ADBlock（BiliUniverse）负责，避免重复处理": [
+      "grpc.biliapi.net",
+      "app.bilibili.com",
+      "api.bilibili.com",
+      "api.live.bilibili.com",
+      "line3-h5-mobile-api.biligame.com"
+    ],
+    "由单独安装的 WeChat增强（可莉）负责，避免重复处理": [
+      "mp.weixin.qq.com",
+      "weixin110.qq.com",
+      "security.wechat.com"
+    ],
+    "付费功能解锁，不收录（Spotify）": [
+      "*-spclient.spotify.com",
+      "spclient.wg.spotify.com"
+    ],
+    "付费功能解锁，不收录（酷我音乐会员）": [
+      "audiobookpay.kuwo.cn",
+      "musicpay.kuwo.cn",
+      "vip1.kuwo.cn"
+    ],
+    "付费功能解锁，不收录（香蕉视频）": [
+      "ios.fuliapps.com",
+      "apple.fuliapps.com",
+      "ios.xiangjiaoapps.com",
+      "apple.xiangjiaoapps.com",
+      "*.xiangxiangapps.com",
+      "*.pipiapps.com"
+    ],
+    "付费接口改写，不收录（爱美剧）": [
+      "api.bjxkhc.com"
+    ]
+  },
+
+  "drop_scripts": {
+    "付费功能解锁，不收录": [
+      "Spotify.Crack",
+      "/kuwo/kuwo.js",
+      "/rrtv_json.js",
+      "/xjsp.js",
+      "/wy/js/wyres.js",
+      "/mlxx.js",
+      "/51job.js"
+    ],
+    "上游脚本地址已失效": [
+      "zZPiglet/Task/master/asset/UnblockURLinWeChat.js"
+    ]
+  },
+
+  "script_filename_block_regex": "(?i)(crack|unlock|svip|premium|破解|解锁)",
+
+  "protect_domains": [
+    "claude.ai", "claude.com", "api.anthropic.com", "console.anthropic.com",
+    "chatgpt.com", "chat.openai.com", "api.openai.com", "auth.openai.com", "cdn.oaistatic.com", "files.oaiusercontent.com", "sora.com",
+    "gemini.google.com", "aistudio.google.com", "generativelanguage.googleapis.com", "notebooklm.google.com",
+    "www.perplexity.ai", "grok.com", "x.ai",
+    "www.apple.com", "apps.apple.com", "gateway.icloud.com", "is1-ssl.mzstatic.com", "testflight.apple.com",
+    "www.google.com", "accounts.google.com", "www.youtube.com",
+    "github.com", "api.github.com", "raw.githubusercontent.com", "objects.githubusercontent.com",
+    "t.me", "telegram.org",
+    "weixin.qq.com", "dns.weixin.qq.com", "res.wx.qq.com", "mmbiz.qpic.cn", "wx.qlogo.cn",
+    "mobilegw.alipay.com", "render.alipay.com",
+    "www.taobao.com", "acs.m.taobao.com", "h5api.m.taobao.com", "img.alicdn.com", "gw.alicdn.com",
+    "api.m.jd.com", "m.360buyimg.com",
+    "i.meituan.com", "kyfw.12306.cn", "mobile.12306.cn",
+    "restapi.amap.com", "m5.amap.com",
+    "api.zhihu.com", "www.zhihu.com",
+    "upos-sz-mirrorali.bilivideo.com", "i0.hdslb.com",
+    "aweme.snssdk.com", "api.amemv.com",
+    "pan.baidu.com", "www.baidu.com",
+    "music.163.com", "interface.music.163.com",
+    "edith.xiaohongshu.com", "api.weibo.cn",
+    "id6.me", "opencloud.wostore.cn", "wap.cmpassport.com"
+  ],
+
+  "protect_mitm": [
+    "*.gov.cn",
+    "alipay.com", "*.alipay.com", "*.alipayobjects.com", "*.95516.com", "*.unionpay.com", "*.tenpay.com", "*.wxpay.com",
+    "*.icbc.com.cn", "*.ccb.com", "*.ccb.com.cn", "*.abchina.com", "*.abchina.com.cn", "*.boc.cn", "*.bankcomm.com",
+    "*.cmbchina.com", "*.psbc.com", "*.psbc.com.cn", "*.spdb.com.cn", "*.cib.com.cn", "*.citicbank.com", "*.ecitic.com",
+    "*.pingan.com", "*.pingan.com.cn", "*.cmbc.com.cn", "*.cebbank.com", "*.hxb.com.cn",
+    "*.10086.cn", "*.10010.com", "*.189.cn", "*.chinamobile.com", "*.chinatelecom.com.cn", "*.cmpassport.com", "id6.me", "*.wostore.cn",
+    "*.apple.com", "*.icloud.com",
+    "*.googleapis.com", "*.googlevideo.com", "accounts.google.com",
+    "*.openai.com", "*.chatgpt.com", "*.oaistatic.com", "*.oaiusercontent.com",
+    "*.anthropic.com", "*.claude.ai", "*.claude.com",
+    "gemini.google.com", "aistudio.google.com", "*.perplexity.ai"
+  ]
+}

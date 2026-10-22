@@ -1,0 +1,65 @@
+name: build
+
+on:
+  schedule:
+    - cron: "23 19 * * *"   # 每天 03:23（北京时间）
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "config/**"
+      - "build/**"
+      - ".github/workflows/build.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build module
+        id: build
+        continue-on-error: true
+        run: |
+          set +e
+          python build/build.py
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          # 0 = 正常；4 = 个别脚本暂时取不到，已先剔除（见 REPORT.md）
+          if [ $code -eq 0 ] || [ $code -eq 4 ]; then exit 0; fi
+          exit $code
+
+      - name: Lint module
+        run: python build/lint.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 每月 1 日写一次心跳，避免仓库长期无提交导致定时任务被 GitHub 停用
+          if [ "$(TZ=Asia/Shanghai date +%d)" = "01" ]; then TZ=Asia/Shanghai date "+%F %T" > status/heartbeat.txt; fi
+          git add -A dist cache status
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "build: $(TZ=Asia/Shanghai date '+%F %H:%M')"
+            git push
+          fi
+
+      - name: Report upstream problem
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "上游获取或检查失败，模块保持上一次成功的版本。详见 dist/REPORT.md。"
+          exit 1

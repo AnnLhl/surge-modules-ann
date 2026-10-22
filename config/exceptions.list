@@ -1,0 +1,23 @@
+# 例外放行：构建时插到模块 [Rule] 最前面，先于上游的拦截规则匹配。
+# 只写国内精确域名 + DIRECT（模块规则只能用 DIRECT / REJECT 系列，不能指向代理组）。
+# 每条写明原因和日期；需要临时放行时，优先用手机上的本地模块“Anning 例外放行”，验证后再写进这里。
+
+# 2026-10-23 腾讯视频播放调度、DRM、直播（上游 DOMAIN-SUFFIX,l.qq.com,REJECT 会误拦）
+DOMAIN,vd.l.qq.com,DIRECT
+DOMAIN,vi.l.qq.com,DIRECT
+DOMAIN,fairplay.l.qq.com,DIRECT
+DOMAIN,livew.l.qq.com,DIRECT
+
+# 2026-10-23 友盟消息推送与错误上报（上游 DOMAIN-KEYWORD,umeng,REJECT 会误拦）
+DOMAIN,msg.umeng.com,DIRECT
+DOMAIN,msg.umengcloud.com,DIRECT
+DOMAIN,errlog.umeng.com,DIRECT
+
+# 2026-10-23 个推地震速报（上游 DOMAIN-SUFFIX,getui.com,REJECT 会误拦）
+DOMAIN-SUFFIX,dizhensubao.getui.com,DIRECT
+
+# 2026-10-23 小米设备服务（上游拦截）
+DOMAIN,tracking.miui.com,DIRECT
+
+# 2026-10-23 知乎消息通道（上游拦截）
+DOMAIN,mqtt.zhihu.com,DIRECT

@@ -1,0 +1,18 @@
+{
+  "_说明": "上游来源。只收录允许修改后再分发的开源项目（GPL/MIT 等），按顺序合并。新增来源前先核对许可证与作者条款。",
+  "output": "dist/Anning-AdBlock.sgmodule",
+  "report": "dist/REPORT.md",
+  "name": "Anning 去广告",
+  "upstreams": [
+    {
+      "id": "fmz200-blockAds",
+      "title": "广告拦截&净化合集",
+      "author": "奶思 (fmz200)",
+      "homepage": "https://github.com/fmz200/wool_scripts",
+      "license": "GPL-3.0",
+      "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/blockAds.module",
+      "min_bytes": 100000,
+      "min_rules": 1000
+    }
+  ]
+}
