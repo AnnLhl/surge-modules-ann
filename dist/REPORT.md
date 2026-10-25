@@ -1,19 +1,23 @@
 # 构建报告
 
-- 构建时间：2026-10-23 00:59:48（北京时间）
-- 上游：[广告拦截&净化合集](https://github.com/fmz200/wool_scripts)（奶思 (fmz200)，GPL-3.0），上游日期 2026-09-10 21:10:39，内容摘要 `d75a30e3410f`
+- 构建时间：2026-10-26 05:55:27（北京时间）
+- 上游：[广告拦截&净化合集](https://github.com/fmz200/wool_scripts)（奶思 (fmz200)，GPL-3.0），上游日期 2026-10-25 22:36:13，内容摘要 `084197a83ab6`
 
 | 段落 | 条目数 |
 |---|---|
-| Rule | 2819 |
+| Rule | 2814 |
 | Header Rewrite | 0 |
 | URL Rewrite | 512 |
-| Body Rewrite | 84 |
-| Map Local | 790 |
+| Body Rewrite | 85 |
+| Map Local | 800 |
 | Script | 188 |
-| MITM | 865 |
+| MITM | 873 |
 
 ## 被去除的条目
+
+### 模块不应修改 [General]（1）
+
+- `[General] force-http-engine-hosts = %APPEND% lzmh.lz-qs.com:5090`
 
 ### 由单独安装的 BiliBili: ADBlock（BiliUniverse）负责，避免重复处理（32）
 
