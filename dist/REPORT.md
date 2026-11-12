@@ -1,17 +1,17 @@
 # 构建报告
 
-- 构建时间：2026-10-31 07:04:00（北京时间）
-- 上游：[广告拦截&净化合集](https://github.com/fmz200/wool_scripts)（奶思 (fmz200)，GPL-3.0），上游日期 2026-10-30 16:26:43，内容摘要 `cc306fc3e061`
+- 构建时间：2026-11-12 09:35:16（北京时间）
+- 上游：[广告拦截&净化合集](https://github.com/fmz200/wool_scripts)（奶思 (fmz200)，GPL-3.0），上游日期 2026-11-11 22:01:46，内容摘要 `c0f86fc48a01`
 
 | 段落 | 条目数 |
 |---|---|
 | Rule | 2814 |
 | Header Rewrite | 0 |
-| URL Rewrite | 512 |
+| URL Rewrite | 511 |
 | Body Rewrite | 85 |
 | Map Local | 800 |
 | Script | 188 |
-| MITM | 873 |
+| MITM | 897 |
 
 ## 被去除的条目
 
@@ -195,6 +195,13 @@
 - `[MITM] api.cloud.189.cn`
 - `[MITM] cloud.189.cn`
 
+### 付费功能解锁，不收录（香蕉视频）（4）
+
+- `[MITM] *.pipiapps.com`
+- `[MITM] *.fuliapps.com`
+- `[MITM] *.xiangjiaoapps.com`
+- `[MITM] *.xiangxiangapps.com`
+
 ### 在解密保护范围内（*.psbc.com）（4）
 
 - `[MITM] static.psbc.com`
@@ -212,8 +219,8 @@
 
 ### 在解密保护范围内（*.boc.cn）（2）
 
-- `[MITM] openapi.boc.cn`
 - `[MITM] mlife.jf365.boc.cn`
+- `[MITM] openapi.boc.cn`
 
 ### 在解密保护范围内（*.citicbank.com）（1）
 

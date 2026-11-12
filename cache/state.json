@@ -1,13 +1,13 @@
 {
- "built": "2026-10-31 07:04:00",
+ "built": "2026-11-12 09:35:16",
  "counts": {
   "Body Rewrite": 85,
   "Header Rewrite": 0,
-  "MITM": 873,
+  "MITM": 897,
   "Map Local": 800,
   "Rule": 2814,
   "Script": 188,
-  "URL Rewrite": 512
+  "URL Rewrite": 511
  },
  "scripts": [
   "https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
@@ -83,8 +83,8 @@
  ],
  "upstreams": {
   "fmz200-blockAds": {
-   "date": "2026-10-30 16:26:43",
-   "digest": "cc306fc3e061"
+   "date": "2026-11-11 22:01:46",
+   "digest": "c0f86fc48a01"
   }
  }
 }
