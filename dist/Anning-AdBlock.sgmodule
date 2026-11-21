@@ -1,13 +1,13 @@
 #!name=Anning 去广告
-#!desc=每日自动构建。上游：广告拦截&净化合集 2026-11-11 22:01:46。已去除付费解锁与重复部分，加入例外放行。构建于 2026-11-12 09:35（北京时间）。
+#!desc=每日自动构建。上游：广告拦截&净化合集 2026-11-11 22:01:46。已去除付费解锁与重复部分，加入例外放行。构建于 2026-11-22 07:51（北京时间）。
 #!author=奶思 (fmz200)[https://github.com/fmz200/wool_scripts]; 构建 AnnLhl[https://github.com/AnnLhl/surge-modules-ann]
 #!homepage=https://github.com/AnnLhl/surge-modules-ann
 #!category=Anning
 #!system=ios
-#!date=2026-11-12 09:35:16
+#!date=2026-11-22 07:51:27
 
 # 本文件由 https://github.com/AnnLhl/surge-modules-ann 自动生成，请勿手动修改。
-# 上游：广告拦截&净化合集（奶思 (fmz200)，GPL-3.0）https://github.com/fmz200/wool_scripts，上游日期 2026-11-11 22:01:46，内容摘要 c0f86fc48a01
+# 上游：广告拦截&净化合集（奶思 (fmz200)，GPL-3.0）https://github.com/fmz200/wool_scripts，上游日期 2026-11-11 22:01:46，内容摘要 84d4911565a8
 # 本模块按 GPL-3.0 修改与分发；修改内容见仓库中的 config/ 与 dist/REPORT.md。
 
 [Rule]
@@ -974,7 +974,6 @@ DOMAIN,lc.map.baidu.com,REJECT
 
 # > 百度贴吧
 # hostname = tiebac.baidu.com
-DOMAIN,180.76.76.200,REJECT
 # 屏蔽域名dns查询, REJECT
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 
@@ -3571,7 +3570,6 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN,sugar.zhihu.com,REJECT
 DOMAIN,crash2.zhihu.com,REJECT
-DOMAIN,118.89.204.198,REJECT
 IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 DOMAIN,zxid-m.mobileservice.cn,REJECT

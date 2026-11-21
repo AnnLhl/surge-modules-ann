@@ -1,11 +1,11 @@
 {
- "built": "2026-11-12 09:35:16",
+ "built": "2026-11-22 07:51:27",
  "counts": {
   "Body Rewrite": 85,
   "Header Rewrite": 0,
   "MITM": 897,
   "Map Local": 800,
-  "Rule": 2814,
+  "Rule": 2812,
   "Script": 188,
   "URL Rewrite": 511
  },
@@ -84,7 +84,7 @@
  "upstreams": {
   "fmz200-blockAds": {
    "date": "2026-11-11 22:01:46",
-   "digest": "c0f86fc48a01"
+   "digest": "84d4911565a8"
   }
  }
 }
