@@ -1,7 +1,7 @@
 # 构建报告
 
-- 构建时间：2026-11-22 07:51:27（北京时间）
-- 上游：[广告拦截&净化合集](https://github.com/fmz200/wool_scripts)（奶思 (fmz200)，GPL-3.0），上游日期 2026-11-11 22:01:46，内容摘要 `84d4911565a8`
+- 构建时间：2026-11-26 10:18:20（北京时间）
+- 上游：[广告拦截&净化合集](https://github.com/fmz200/wool_scripts)（奶思 (fmz200)，GPL-3.0），上游日期 2026-11-25 21:36:48，内容摘要 `4e7bc49b3f9b`
 
 | 段落 | 条目数 |
 |---|---|
@@ -9,9 +9,15 @@
 | Header Rewrite | 0 |
 | URL Rewrite | 511 |
 | Body Rewrite | 85 |
-| Map Local | 800 |
-| Script | 188 |
+| Map Local | 799 |
+| Script | 190 |
 | MITM | 897 |
+
+## 脚本变化（与上次构建相比）
+
+- 新增：https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
+- 新增：https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
+- 移除：https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
 
 ## 被去除的条目
 
@@ -211,7 +217,7 @@
 
 ### 在解密保护范围内（*.googlevideo.com）（1）
 
-- `[MITM] rr*.googlevideo.com`
+- `[MITM] *.googlevideo.com`
 
 ### 在解密保护范围内（*.googleapis.com）（1）
 

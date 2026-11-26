@@ -1,13 +1,13 @@
 #!name=Anning 去广告
-#!desc=每日自动构建。上游：广告拦截&净化合集 2026-11-11 22:01:46。已去除付费解锁与重复部分，加入例外放行。构建于 2026-11-22 07:51（北京时间）。
+#!desc=每日自动构建。上游：广告拦截&净化合集 2026-11-25 21:36:48。已去除付费解锁与重复部分，加入例外放行。构建于 2026-11-26 10:18（北京时间）。
 #!author=奶思 (fmz200)[https://github.com/fmz200/wool_scripts]; 构建 AnnLhl[https://github.com/AnnLhl/surge-modules-ann]
 #!homepage=https://github.com/AnnLhl/surge-modules-ann
 #!category=Anning
 #!system=ios
-#!date=2026-11-22 07:51:27
+#!date=2026-11-26 10:18:20
 
 # 本文件由 https://github.com/AnnLhl/surge-modules-ann 自动生成，请勿手动修改。
-# 上游：广告拦截&净化合集（奶思 (fmz200)，GPL-3.0）https://github.com/fmz200/wool_scripts，上游日期 2026-11-11 22:01:46，内容摘要 84d4911565a8
+# 上游：广告拦截&净化合集（奶思 (fmz200)，GPL-3.0）https://github.com/fmz200/wool_scripts，上游日期 2026-11-25 21:36:48，内容摘要 4e7bc49b3f9b
 # 本模块按 GPL-3.0 修改与分发；修改内容见仓库中的 config/ 与 dist/REPORT.md。
 
 [Rule]
@@ -5243,7 +5243,7 @@ http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\
 
 # > 天府银行小程序
 # hostname = chl.tf.cn, wechat.tf.cn
-http-response ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo "imgUrl" response-body
+http-response ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/order\/queryOrderInfo "imgUrl" "fmz200"
 
 # > 途家民宿
 # hostname = client.tujia.com
@@ -7721,11 +7721,6 @@ https://.+\.gamersky.com/v1/statisticAd data-type=text data="{}" status-code=200
 # hostname = restapi.iyunmai.com
 ^https?:\/\/restapi\.iyunmai\.com\/api\/ios\/ad\/ data-type=text data=" " status-code=200
 
-# > YouTube
-# hostname = rr*.googlevideo.com, youtubei.googleapis.com
-# 播放页广告
-^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 
 # > 涨乐财富通
@@ -8372,7 +8367,7 @@ mdb = type=http-response, pattern=^https?:\/\/creditcardapp\.bankcomm\.(com|cn)\
 # hostname = j1.pupuapi.com
 朴朴超市 = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/search\/hot_keywords\/v3, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
 
-朴朴超市 = type=http-response, pattern="^https:\/\/j1\.pupuapi\.com\/client\/a朴朴超市,", script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
+朴朴超市 = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/app_resource\/resource_preload\/list_h5_resource, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
 
 朴朴超市 = type=http-response, pattern=^https:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v1, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js, requires-body=true, timeout=60
 
@@ -8649,10 +8644,11 @@ usmile = type=http-response, pattern=^https?:\/\/www\.myusmile\.online\/user\/pl
 # hostname = api.ulife.group
 悠洗APP = type=http-response, pattern=^https?:\/\/api\.ulife\.group\/market\/homeIconDetail\/list\/v7, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js, requires-body=true, timeout=60
 
-# > YouTube
-# hostname = rr*.googlevideo.com, youtubei.googleapis.com
-# 响应体
-YouTube响应体 = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, timeout=60
+# > Youtube (Music) Enhance
+# hostname = *.googlevideo.com, youtubei.googleapis.com
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch|log_event|config))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js,argument="{"captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"blockImmersive":{{{屏蔽选段按钮}}},"blockShorts":{{{屏蔽Shorts按钮}}},"debug":{{{启用调试模式}}}}"
+youtube.request.init = type=http-request,pattern=^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js,argument="{"captionLang":"{{{字幕翻译语言}}}"}"
+youtube.request.log_event = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/log_event,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js
 
 # >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
 

@@ -1,17 +1,18 @@
 {
- "built": "2026-11-22 07:51:27",
+ "built": "2026-11-26 10:18:20",
  "counts": {
   "Body Rewrite": 85,
   "Header Rewrite": 0,
   "MITM": 897,
-  "Map Local": 800,
+  "Map Local": 799,
   "Rule": 2812,
-  "Script": 188,
+  "Script": 190,
   "URL Rewrite": 511
  },
  "scripts": [
   "https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js",
-  "https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js",
+  "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.request.js",
+  "https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js",
   "https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js",
   "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js",
   "https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js",
@@ -83,8 +84,8 @@
  ],
  "upstreams": {
   "fmz200-blockAds": {
-   "date": "2026-11-11 22:01:46",
-   "digest": "84d4911565a8"
+   "date": "2026-11-25 21:36:48",
+   "digest": "4e7bc49b3f9b"
   }
  }
 }
